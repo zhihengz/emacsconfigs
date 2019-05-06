@@ -1,0 +1,5 @@
+emacs configuration
+===================
+
+emacs.el => .emacs
+profile  => .emacs.d/profile.active
