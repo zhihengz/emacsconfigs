@@ -1,6 +1,6 @@
 emacs configuration
 ===================
-
 distributed emacs configuration:
+
 emacs.el => .emacs
 profile  => .emacs.d/profile/public
