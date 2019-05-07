@@ -9,6 +9,7 @@
 ;; add anything else
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; default packages to bootstrap everything else
 (defvar local/packages '(load-dir
 			 use-package)
   "Default packages")
@@ -25,8 +26,10 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
+;; use-package wraps package installation and configuration
 (require 'use-package)
-
+;; prefer user-package to home-grown function below
+;; this only suits when use-package is not working
 (defun local/ensure-package-loaded (pkg)
   "ensure a package is installed"
   (when (not (package-installed-p pkg))
@@ -37,7 +40,7 @@
 ;; load active profiles
 (setq load-dirs '("~/.emacs.d/profiles.active"
 		 "~/.emacs.d/profiles.private"))
-
+;; decentralize configurations with load-dir
 (require 'load-dir)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
