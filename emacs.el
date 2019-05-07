@@ -4,7 +4,7 @@
 ;; in .emacs.d/profiles/{public, private}
 ;;
 ;; common lisp for emacs
-(require 'cl)
+ (require 'cl)
 
 ;; package management
 (load "package")
@@ -12,8 +12,8 @@
 ;; change gnu to use https
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")))
 ;; add anything else
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; default packages to bootstrap everything else
 (defvar local/packages '(load-dir
 			 use-package)
@@ -59,7 +59,7 @@
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (puppet-mode yasnippet clojure-mode rust-mode go-mode dirtree yasnippet-snippets scala-mode yaml-mode mustache-mode solarized-theme load-dir elpy autopair)))
+    (origami puppet-mode yasnippet clojure-mode rust-mode go-mode dirtree yasnippet-snippets scala-mode yaml-mode mustache-mode solarized-theme load-dir elpy autopair)))
  '(python-guess-indent nil)
  '(python-indent-offset 2))
 (custom-set-faces
