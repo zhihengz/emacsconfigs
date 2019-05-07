@@ -1,3 +1,8 @@
+;; $HOME/.emacs
+;;
+;; bare minimum configuration for emacs, individual configurations should be distributed
+;; in .emacs.d/profiles/{public, private}
+;;
 ;; common lisp for emacs
 (require 'cl)
 
@@ -37,9 +42,11 @@
     (package-refresh-contents)
     (package-install pkg)))
 
-;; load active profiles
-(setq load-dirs '("~/.emacs.d/profiles.active"
-		 "~/.emacs.d/profiles.private"))
+;; load profiles
+;; any non-sensitive profiles should go to .emacs.d/profiles/public
+;; while private and/or sensitive profiles should go to .emacs.d/profiles/private
+(setq load-dirs '("~/.emacs.d/profiles/public"
+		 "~/.emacs.d/profiles/private"))
 ;; decentralize configurations with load-dir
 (require 'load-dir)
 (custom-set-variables

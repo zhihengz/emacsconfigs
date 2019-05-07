@@ -2,4 +2,4 @@ emacs configuration
 ===================
 
 emacs.el => .emacs
-profile  => .emacs.d/profile.active
+profile  => .emacs.d/profile/public
