@@ -1,2 +1,2 @@
-(local/ensure-package-loaded 'go-mode)
-(require 'go-mode)
+(use-package go-mode
+  :ensure t)

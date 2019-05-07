@@ -1,4 +1,6 @@
-(local/ensure-package-loaded 'yasnippet)
-(local/ensure-package-loaded 'yasnippet-snippets)
-(require 'yasnippet)
-(yas/global-mode 1)
+(use-package yasnippet
+  :ensure t
+  :config
+  (use-package yasnippet-snippets
+    :ensure t)
+  (yas/global-mode 1))

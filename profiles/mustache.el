@@ -1,2 +1,2 @@
-(local/ensure-package-loaded 'mustache-mode)
-(require 'mustache-mode)
+(use-package mustache-mode
+  :ensure t)

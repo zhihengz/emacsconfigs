@@ -9,7 +9,8 @@
 ;; add anything else
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(defvar local/packages '(load-dir)
+(defvar local/packages '(load-dir
+			 use-package)
   "Default packages")
 
 (defun local/packages-installed-p ()
@@ -23,6 +24,8 @@
   (dolist (pkg local/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
+
+(require 'use-package)
 
 (defun local/ensure-package-loaded (pkg)
   "ensure a package is installed"
@@ -46,7 +49,7 @@
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (clojure-mode rust-mode go-mode dirtree yasnippet-snippets scala-mode yaml-mode mustache-mode solarized-theme load-dir elpy autopair)))
+    (puppet-mode yasnippet clojure-mode rust-mode go-mode dirtree yasnippet-snippets scala-mode yaml-mode mustache-mode solarized-theme load-dir elpy autopair)))
  '(python-guess-indent nil)
  '(python-indent-offset 2))
 (custom-set-faces

@@ -1,5 +1,6 @@
-(local/ensure-package-loaded 'solarized-theme)
-(require 'solarized-theme)
-(if window-system
-    (load-theme 'solarized-light t)
-  (load-theme 'wombat t))
+(use-package solarized-theme
+  :config
+  (load-theme 'wombat t)
+  :if window-system
+  :config
+  (load-theme 'solarized-light t))

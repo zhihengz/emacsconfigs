@@ -1,2 +1,2 @@
-(local/ensure-package-loaded 'clojure-mode)
-(require 'clojure-mode)
+(use-package clojure-mode
+  :ensure t)
