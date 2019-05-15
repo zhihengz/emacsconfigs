@@ -10,7 +10,7 @@
 (when (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
 
-(setq tab-width 2
+(setq-default tab-width 2
       indent-tabs-mode nil)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
