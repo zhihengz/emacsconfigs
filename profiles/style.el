@@ -10,6 +10,8 @@
 (when (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
 
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
 (setq-default tab-width 2
       indent-tabs-mode nil)
 
