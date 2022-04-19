@@ -4,7 +4,7 @@
 ;; in .emacs.d/profiles/{public, private}
 ;;
 ;; common lisp for emacs
- (require 'cl)
+(require 'cl-lib)
 
 ;; split off customization
 (setq custom-file "~/.emacs.d/custom.el")
@@ -24,9 +24,10 @@
   "Default packages")
 
 (defun local/packages-installed-p ()
-  (loop for pkg in local/packages
-        when (not (package-installed-p pkg)) do (return nil)
-        finally (return t)))
+  (cl-every 'package-installed-p local/packages))
+;;  (cl-loop for pkg in local/packages
+;;        when (not (package-installed-p pkg)) do (cl-return nil)
+;;        finally (cl-return t)))
 
 (unless (local/packages-installed-p)
   (message "%s" "Refreshing package database...")
